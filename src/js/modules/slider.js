@@ -14,6 +14,18 @@
         if (n < 1) {
             this.slideIndex = this.slides.length;
         }
+        try {
+            this.hanson.style.opacity = '0';
+            if (n == 3) {
+                setTimeout(() => {
+                    this.hanson.classList.add('animated', 'slideInUp');
+                    this.hanson.style.opacity = '1';
+                }, 3000);
+            } else {
+                this.hanson.classList.remove('slideInUp');
+            }
+        } catch (e) {}
+
         this.slides.forEach(slide => {
             slide.classList.remove('fadeIn');
             slide.classList.add('animated', 'fadeOut');
@@ -29,6 +41,10 @@
     }
 
     render() {
+        try {
+            this.hanson = document.querySelector('.modules__info .hanson');
+        } catch (e) {}
+        
         this.btns.forEach(btn => {
             btn.addEventListener('click', () => {
                 this.plusSlides(1);
