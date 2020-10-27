@@ -5,7 +5,7 @@
         btns = null,
         next = null, 
         prev = null,
-        activeClass = '',
+        activeClass = null,
         animate, 
         autoplay
     } = {}) {
