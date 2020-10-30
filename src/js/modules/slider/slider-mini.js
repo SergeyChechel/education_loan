@@ -23,7 +23,7 @@ export default class MiniSlider extends Slider {
                 this.slides[0].querySelector('.card__title').style.opacity = '1';
                 this.slides[0].querySelector('.card__controls-arrow').style.opacity = '1';
             }
-        } catch(e) {console.log(e)}
+        } catch(e) {}
     }
 
     nextSlide() {
@@ -43,7 +43,7 @@ export default class MiniSlider extends Slider {
                 this.container.appendChild(this.slides[0]);
                 this.decorizeSlides();
             }
-        } catch(e) {console.log(e)}
+        } catch(e) {}
 
     }
 
@@ -61,7 +61,7 @@ export default class MiniSlider extends Slider {
                     }
                 }
             });
-        } catch(e) {console.log(e)}
+        } catch(e) {}
         
     }
 
@@ -73,7 +73,7 @@ export default class MiniSlider extends Slider {
                 overflow: hidden;
                 align-items: flex-start;
             `;
-        } catch(e) {console.log(e)}
+        } catch(e) {}
 
         this.bindTriggers();
         this.decorizeSlides();

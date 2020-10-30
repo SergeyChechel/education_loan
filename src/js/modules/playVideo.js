@@ -10,9 +10,9 @@ export default class VideoPlayer {
     bindTriggers() {
         this.btns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // if (btn.querySelector('.closed')) {
-                //     return;
-                // }
+                if (btn.querySelector('.closed')) {
+                    return;
+                }
                 this.activeBtn = btn;
                 if (this.path && this.path !== btn.getAttribute('data-url')) {
                     this.path = btn.getAttribute('data-url');
