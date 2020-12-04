@@ -34,7 +34,6 @@ export default class VideoPlayer {
     }
 
     createPlayer(url) {
-        
         if(!this.player) {
             this.player = new YT.Player('frame', {
                 height: '100%',
@@ -79,7 +78,6 @@ export default class VideoPlayer {
             this.bindTriggers();
             this.bindCloseBtn();
         }
-        
     }
 
 } 

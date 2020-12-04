@@ -27,11 +27,11 @@ export default class MiniSlider extends Slider {
     }
 
     nextSlide() {
-        const parentMainSlideClass = this.container.classList[0].split('__')[0];
-        const parentMainSlide = this.container.closest('.' + parentMainSlideClass);
-        if (parentMainSlide.style.display === 'none') {return;}
-
         try {
+            const parentMainSlideClass = this.container.classList[0].split('__')[0];
+            const parentMainSlide = this.container.closest('.' + parentMainSlideClass);
+            if (parentMainSlide.style.display === 'none') {return;}
+
             if (this.slides[1].tagName == 'BUTTON' && 
                 this.slides[2].tagName == 'BUTTON') {
                     this.container.appendChild(this.slides[0]);
