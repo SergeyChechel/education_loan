@@ -12,9 +12,11 @@ export default class MainSlider extends Slider {
                 this.slideIndex = 1;
             }
         } catch(e) {}
+
         if (n < 1) {
             this.slideIndex = this.slides.length;
         }
+
         try {
             this.hanson.style.opacity = '0';
             if (n == 3) {
@@ -33,7 +35,6 @@ export default class MainSlider extends Slider {
                 slide.classList.add('animated', 'fadeOut');
                 slide.style.display = 'none';
             });
-
             this.slides[this.slideIndex - 1].classList.remove('fadeOut');
             this.slides[this.slideIndex - 1].classList.add('fadeIn');
             this.slides[this.slideIndex - 1].style.display = 'block';
@@ -46,7 +47,6 @@ export default class MainSlider extends Slider {
     }
 
     bindTriggers(trigger, n) {
-        
         trigger.forEach(el => {
             el.addEventListener('click', (e) => {
                 e.stopPropagation();

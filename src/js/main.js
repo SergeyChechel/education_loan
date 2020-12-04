@@ -43,13 +43,13 @@ window.addEventListener('DOMContentLoaded', () => {
         container: '.feed__slider',
         prev: '.feed__slider .slick-prev',
         next: '.feed__slider .slick-next',
-        activeClass: 'feed__item-active'
+        activeClass: 'feed__item-active',
+        autoplay: false
     });
     feedSlider.init();
 
     new VideoPlayer('.showup .play', '.overlay').init();
     new VideoPlayer('.module__video-item .play', '.overlay').init();
-    
 
     new Difference('.officerold', '.officernew', '.officer__card-item').init();
     

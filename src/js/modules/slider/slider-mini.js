@@ -27,17 +27,20 @@ export default class MiniSlider extends Slider {
     }
 
     nextSlide() {
+        const parentMainSlideClass = this.container.classList[0].split('__')[0];
+        const parentMainSlide = this.container.closest('.' + parentMainSlideClass);
+        if (parentMainSlide.style.display === 'none') {return;}
 
         try {
             if (this.slides[1].tagName == 'BUTTON' && 
                 this.slides[2].tagName == 'BUTTON') {
                     this.container.appendChild(this.slides[0]);
-                    this.container.appendChild(this.slides[1]); 
-                    this.container.appendChild(this.slides[2]); 
+                    this.container.appendChild(this.slides[0]); 
+                    this.container.appendChild(this.slides[0]); 
                     this.decorizeSlides();
             } else if (this.slides[1].tagName == 'BUTTON') {
                 this.container.appendChild(this.slides[0]);
-                this.container.appendChild(this.slides[1]); 
+                this.container.appendChild(this.slides[0]); 
                 this.decorizeSlides();
             } else {
                 this.container.appendChild(this.slides[0]);
@@ -77,6 +80,7 @@ export default class MiniSlider extends Slider {
 
         this.bindTriggers();
         this.decorizeSlides();
+
         if (this.autoplay) {
             setInterval(() => this.nextSlide(), 5000);
         }
